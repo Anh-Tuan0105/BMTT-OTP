@@ -16,7 +16,7 @@ export const Verify_2FA = ({ onVerifySuccess, onResetSuccess }: any) => {
         } catch (error: any) {
             setOtp("");
             console.log("The err is : ", error.message);
-            setError("Invalid OTP");
+            setError("Nhập sai mã OTP");
         }
     }
 
@@ -31,15 +31,15 @@ export const Verify_2FA = ({ onVerifySuccess, onResetSuccess }: any) => {
     }
     return (
         <>
-            <form onSubmit={handleTokenVerification} className="bg-white rounded-lg shadow-md w-full max-w-sm mx-auto">
+            <form onSubmit={handleTokenVerification} className="bg-white rounded-lg shadow-md w-full max-w-sm mx-auto my-[60px]">
                 <div className="pt-6">
                     <h2 className="text-3xl text-center font-extralight">
-                        Validate TOTP
+                        TOTP
                     </h2>
                 </div>
                 <hr className="text-gray-200 mt-6 mb-6" />
                 <p className="text-center text-gray-600 text-lg font-light">
-                    Please enter 6-digit Time base OTP to verify 2FA authentication
+                    Vui lòng nhập 6 chữ số OTP
                 </p>
                 <div className="p-6">
                     <div className="mb-4">
@@ -50,7 +50,7 @@ export const Verify_2FA = ({ onVerifySuccess, onResetSuccess }: any) => {
                             value={otp}
                             onChange={(e) => setOtp(e.target.value)}
                             className="w-full p-2 border rounded mt-2"
-                            placeholder="Enter Your TOTP"
+                            placeholder="Nhập mã TOTP"
                             required
                         />
                     </div>
@@ -59,14 +59,14 @@ export const Verify_2FA = ({ onVerifySuccess, onResetSuccess }: any) => {
                         type="submit"
                         className="w-full bg-blue-500 text-white py-2 rounded-md mb-3"
                     >
-                        Verify TOTP
+                        Xác thực TOTP
                     </button>
                     <button
                         type="button"
                         className="w-full bg-slate-600 text-white py-2 rounded-md"
                         onClick={handleReset}
                     >
-                        Reset 2FA
+                        Lấy lại mã QR
                     </button>
                 </div>
             </form>

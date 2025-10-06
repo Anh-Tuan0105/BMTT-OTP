@@ -36,10 +36,10 @@ export const Setup_2FA = ({ onSetupComplete }: { onSetupComplete: any }) => {
 
     return (
         <>
-            <div className="bg-white rounded-lg shadow-md w-full max-w-sm mx-auto">
+            <div className="container bg-white rounded-lg shadow-md w-full max-w-sm mx-auto my-[60px]">
                 <div className="pt-6">
                     <h2 className="text-3xl text-center font-extralight">
-                        Turn on 2FA Verification
+                        Bật Xác Thực Hai Lớp
                     </h2>
                 </div>
                 <hr className="text-gray-200 mt-6 mb-6" />
@@ -66,7 +66,7 @@ export const Setup_2FA = ({ onSetupComplete }: { onSetupComplete: any }) => {
                             onClick={copyClipBoard}
                         />
                     </div>
-                    <button onClick={onSetupComplete} className="w-full bg-blue-500 text-white py-2 rounded-md">Continue Veryfication</button>
+                    <button onClick={onSetupComplete} className="w-full bg-blue-500 text-white py-2 rounded-md">Tiếp tục xác thực</button>
                 </div>
             </div>
         </>
