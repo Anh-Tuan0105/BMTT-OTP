@@ -1,0 +1,12 @@
+import { NextResponse, NextRequest } from 'next/server';
+
+
+// This function can be marked `async` if using `await` inside
+export function middleware(request: NextRequest) {
+    const token = request.cookies.get('connect.sid');
+    return token ? NextResponse.next() : NextResponse.redirect(new URL('/login', request.url)); 
+}
+
+export const config = {
+    matcher: ['/', '/setup-2fa', '/verify-2fa']
+}
