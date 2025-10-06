@@ -4,12 +4,14 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
+    "start": "nodemon index.js",
     "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "bmtt-otp": "file:..",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",

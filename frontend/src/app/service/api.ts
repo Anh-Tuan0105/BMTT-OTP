@@ -1,5 +1,8 @@
 import axios from "axios";
 
+const BASE_URL =
+    process.env.NODE_ENV === "development" ? "http://localhost:7001/api" : "/api";
+
 export default axios.create({
-    baseURL: `http://localhost:7001/api`
+    baseURL: BASE_URL
 });
