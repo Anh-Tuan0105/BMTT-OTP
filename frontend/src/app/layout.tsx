@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SessionProvider from "./context/SessionContext"
 import "./globals.css";
 import { Header } from "./components/Header/Header";
+import { AuthWrapper } from "./components/AuthWrapper";
 
 
 export const metadata: Metadata = {
@@ -18,8 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SessionProvider>
-          <Header />
-          {children}
+          <AuthWrapper>
+            <Header />
+            {children}
+          </AuthWrapper>
         </SessionProvider>
       </body>
     </html>

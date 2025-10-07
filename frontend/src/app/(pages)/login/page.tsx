@@ -7,12 +7,14 @@ import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const router = useRouter();
-  const { login } = useSession();
+  const { login, checkAuthStatus } = useSession();
 
-  const handleLoginSuccess = (userData: any) => {
+  const handleLoginSuccess = async (userData: any) => {
     console.log("The logged in userdata: ", userData);
     login(userData);
-    if(!userData.isMfaActive) {
+    // Đồng bộ với server session
+    await checkAuthStatus();
+    if (!userData.isMfaActive) {
       router.push("/setup-2fa");
     } else {
       router.push("/verify-2fa");
@@ -20,6 +22,6 @@ export default function LoginPage() {
   }
   return (
     // <LoginForm onLoginSuccess={handleLoginSuccess} />
-    <LoginForm1 onLoginSuccess={handleLoginSuccess}/>
+    <LoginForm1 onLoginSuccess={handleLoginSuccess} />
   );
 }

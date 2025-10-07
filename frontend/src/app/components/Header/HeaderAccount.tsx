@@ -7,13 +7,16 @@ import { logoutUser } from "@/app/service/authApi";
 
 export const HeaderAccount = () => {
     const router = useRouter();
-    const { user, logout } = useSession();
+    const { user, logout, checkAuthStatus } = useSession();
 
     const handleLogout = async () => {
         try {
             const { data } = await logoutUser();
             logout(data);
-            router.push("/login");
+            // Đồng bộ với server session
+            await checkAuthStatus();
+            // Force refresh để đảm bảo middleware được gọi lại
+            window.location.href = "/login";
         } catch (error: any) {
             // optional: show toast
             console.log("Error: ", error.message);
