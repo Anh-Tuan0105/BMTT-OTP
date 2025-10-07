@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SessionProvider from "./context/SessionContext"
 import "./globals.css";
 import { Header } from "./components/Header/Header";
-import { AuthWrapper } from "./components/AuthWrapper";
+import { AuthWrapper } from "@/app/components/AuthWrapper";
 
 
 export const metadata: Metadata = {
