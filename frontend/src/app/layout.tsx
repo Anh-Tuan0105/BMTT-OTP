@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SessionProvider from "./context/SessionContext"
 import "./globals.css";
 import { Header } from "./components/Header/Header";
+import { Footer } from "./components/footer/footer";
 
 
 export const metadata: Metadata = {
@@ -21,6 +22,8 @@ export default function RootLayout({
           <Header />
           {children}
         </SessionProvider>
+
+        <Footer />
       </body>
     </html>
   );
