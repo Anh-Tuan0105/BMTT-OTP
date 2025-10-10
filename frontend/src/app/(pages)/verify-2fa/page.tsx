@@ -7,20 +7,21 @@ export default function Verify2FA() {
   const router = useRouter();
 
   const handleVerification = async (data: any) => {
-    if(data) {
-       router.push("/");
+    if (data) {
+      // Đợi cookie sync xong rồi mới chuyển
+      window.location.href = "/";
     }
-  }
+  };
 
   const handle2FAReset = async (data: any) => {
-    if(data) {
+    if (data) {
       router.push("/setup-2fa");
     }
   }
   return (
     <>
-      <Verify_2FA 
-        onVerifySuccess={handleVerification} 
+      <Verify_2FA
+        onVerifySuccess={handleVerification}
         onResetSuccess={handle2FAReset}
       />
     </>

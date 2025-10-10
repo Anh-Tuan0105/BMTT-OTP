@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SessionProvider from "./context/SessionContext"
 import "./globals.css";
 import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
 
 
 export const metadata: Metadata = {
@@ -15,11 +16,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="vi" className="h-full">
       <body>
         <SessionProvider>
-          <Header />
-          {children}
+          <div className="flex flex-col min-h-screen h-full">
+            <Header />
+
+            <main className="flex-grow">
+              {children}
+            </main>
+
+            <Footer />
+          </div>
         </SessionProvider>
       </body>
     </html>

@@ -71,7 +71,7 @@ export const RegisterForm = () => {
                                         />
                                     </div>
                                     <div className="">
-                                        <label htmlFor="password" className="font-[500] text-[14px] text-black mb-[5px]">
+                                        <label htmlFor="password_1" className="font-[500] text-[14px] text-black mb-[5px]">
                                             Xác nhận mật khẩu *
                                         </label>
                                         <input
@@ -81,7 +81,7 @@ export const RegisterForm = () => {
                                             onChange={(e) => setConfirmPassword(e.target.value)}
                                             placeholder="Nhập mật khẩu"
                                             required
-                                            id="password"
+                                            id="password_1"
                                             className="w-full h-[46px] rounded-[4px] border border-[#DEDEDE] font-[500] text-[14px] text-black px-[20px]"
                                         />
                                     </div>

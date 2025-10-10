@@ -47,18 +47,18 @@ export const authStatus = async (req, res) => {
 export const logout = async (req, res) => {
     if (!req.user) res.status(401).json({ message: "Unauthorized user" });
     // Reset 2FA fields before ending the session
-    try {
-        const user = req.user;
-        if (user) {
-            // remove the field
-            user.twoFactorSecret = undefined;
-            user.isMfaActive = false;
-            await user.save();
-        }
-    } catch (e) {
-        // If resetting fails, proceed with logout anyway
-        res.status(500).json({ error: "Error reseting fails", message: error });
-    }
+    // try {
+    //     const user = req.user;
+    //     if (user) {
+    //         // remove the field
+    //         user.twoFactorSecret = undefined;
+    //         user.isMfaActive = false;
+    //         await user.save();
+    //     }
+    // } catch (e) {
+    //     // If resetting fails, proceed with logout anyway
+    //     res.status(500).json({ error: "Error reseting fails", message: error });
+    // }
     req.logout((err) => {
         if (err) {
             return next(err);

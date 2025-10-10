@@ -37,7 +37,7 @@ export const HeaderAccount = () => {
     return (
         <div className="font-[600] text-[#FFFFFF] sm:text-[16px] text-[12px] leading-[100%] gap-x-[8px] inline-flex items-center">
             <span className="truncate max-w-[120px]">{user.username}</span>
-            <button onClick={handleLogout} className="underline">
+            <button onClick={handleLogout} className="text-[red]">
                 Đăng xuất
             </button>
         </div>

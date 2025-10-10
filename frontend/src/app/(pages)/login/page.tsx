@@ -12,14 +12,18 @@ export default function LoginPage() {
   const handleLoginSuccess = (userData: any) => {
     console.log("The logged in userdata: ", userData);
     login(userData);
-    if(!userData.isMfaActive) {
-      router.push("/setup-2fa");
-    } else {
-      router.push("/verify-2fa");
-    }
-  }
+
+    // Đợi một chút để trình duyệt lưu cookie từ backend
+    setTimeout(() => {
+      if (!userData.isMfaActive) {
+        router.push("/setup-2fa");
+      } else {
+        router.push("/verify-2fa");
+      }
+    }, 300); // 👈 delay 300ms giúp middleware đọc được cookie
+  };
   return (
     // <LoginForm onLoginSuccess={handleLoginSuccess} />
-    <LoginForm1 onLoginSuccess={handleLoginSuccess}/>
+    <LoginForm1 onLoginSuccess={handleLoginSuccess} />
   );
 }

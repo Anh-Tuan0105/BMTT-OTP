@@ -6,7 +6,7 @@ import cors from "cors";
 import { dbConnect } from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import "./config/passportConfig.js";
-import path from "path";
+
 import next from "next";
 
 dotenv.config();
@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 7002;
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({ dev, dir: "../frontend" });
 const handle = nextApp.getRequestHandler();
-const __dirname = path.resolve();
+
 
 // Middlewares
 nextApp.prepare().then(() => {
@@ -41,7 +41,7 @@ nextApp.prepare().then(() => {
             resave: false,
             saveUninitialized: false,
             cookie: {
-                maxAge: 60000 * 60, // Sau 1 giờ, cookie và session sẽ hết hạn (người dùng phải đăng nhập lại).
+                maxAge: 60000 * 60,
             }
         })
     );
