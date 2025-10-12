@@ -1,16 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // "use client";
 // import { useRouter } from "next/navigation";
 // import { useSession } from "./context/SessionContext";
 // import { logoutUser } from "./service/authApi";
 
-import Link from "next/link";
-import { FaUserTie } from "react-icons/fa6";
-import { IoSearchSharp } from "react-icons/io5";
 import { Section1 } from "./components/Section/Section1";
 import { Title } from "./components/Title/Title";
 import { CardCompanyItem } from "./components/Card/CardCompanyItem";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Trang chủ",
+  description: "Trang web tuyển dụng việc làm IT tại Việt Nam",
+};
 
 export default function HomePage() {
   // const router = useRouter();

@@ -6,7 +6,7 @@ import { Footer } from "./components/Footer/Footer";
 
 
 export const metadata: Metadata = {
-  title: "Dự án 3",
+  title: "OTP",
   description: "Trang web tuyển dụng việc làm IT tại Việt Nam",
 };
 
